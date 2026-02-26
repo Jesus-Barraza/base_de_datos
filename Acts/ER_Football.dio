@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mxfile host="app.diagrams.net">
+  <diagram name="ER_Football">
+    <mxGraphModel dx="1000" dy="600" grid="1" gridSize="10" guides="1" tooltips="1"
+      connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1100"
+      pageHeight="850" math="0" shadow="0">
+      <root>
+        <mxCell id="0"/>
+        <mxCell id="1" parent="0"/>
+
+        <!-- PARTIDO -->
+        <mxCell id="2" value="PARTIDO
+-----------------
+id_partido (PK)
+fecha
+hora
+estadio
+goles_local
+goles_visitante"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;"
+          vertex="1" parent="1">
+          <mxGeometry x="400" y="50" width="220" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- EQUIPO -->
+        <mxCell id="3" value="EQUIPO
+-----------------
+id_equipo (PK)
+nombre
+ciudad"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;"
+          vertex="1" parent="1">
+          <mxGeometry x="100" y="300" width="200" height="110" as="geometry"/>
+        </mxCell>
+
+        <!-- JUGADOR -->
+        <mxCell id="4" value="JUGADOR
+-----------------
+id_jugador (PK)
+nombre
+posicion
+id_equipo (FK)"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;"
+          vertex="1" parent="1">
+          <mxGeometry x="700" y="300" width="220" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- EVENTO -->
+        <mxCell id="5" value="EVENTO
+-----------------
+id_evento (PK)
+minuto
+tipo_evento
+id_partido (FK)
+id_jugador (FK)"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f8cecc;strokeColor=#b85450;"
+          vertex="1" parent="1">
+          <mxGeometry x="400" y="300" width="240" height="140" as="geometry"/>
+        </mxCell>
+
+        <!-- CALIFICACION -->
+        <mxCell id="6" value="CALIFICACION
+-----------------
+id_calificacion (PK)
+puntuacion
+id_partido (FK)
+id_jugador (FK)"
+          style="rounded=1;whiteSpace=wrap;html=1;fillColor=#e1d5e7;strokeColor=#9673a6;"
+          vertex="1" parent="1">
+          <mxGeometry x="400" y="500" width="240" height="130" as="geometry"/>
+        </mxCell>
+
+        <!-- Relationships (Edges) -->
+        <mxCell id="7" style="endArrow=block;" edge="1" parent="1" source="2" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="8" style="endArrow=block;" edge="1" parent="1" source="4" target="5">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="9" style="endArrow=block;" edge="1" parent="1" source="3" target="4">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="10" style="endArrow=block;" edge="1" parent="1" source="2" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+        <mxCell id="11" style="endArrow=block;" edge="1" parent="1" source="4" target="6">
+          <mxGeometry relative="1" as="geometry"/>
+        </mxCell>
+
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

@@ -1,0 +1,9 @@
+SELECT * FROM libros WHERE libros.titulo LIKE "%EL%";
+SELECT * FROM libros WHERE libros.titulo LIKE "C%":
+SELECT * FROM libros WHERE libros.precio BETWEEN 100 AND 500;
+SELECT * FROM autores WHERE autores.pais IN ("Mexico", "Colombia");
+SELECT * FROM libros WHERE libros.titulo LIKE "%Mexico%"
+SELECT * FROM autores WHERE autores.pais = "Mexico";
+SELECT * FROM autores WHERE autores.pais = "Colombia";
+
+SELECT libros.titulo, libros.precio FROM libros WHERE precio > (SELECT AVG(precio) FROM libros)

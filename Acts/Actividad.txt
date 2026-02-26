@@ -1,0 +1,5 @@
+Actividad
+
+SELECT empleados.nombre as Nombre, departamentos.nombre as Departamento FROM `departamentos`  RIGHT JOIN empleados ON empleados.id_depto=departamentos.id_depto WHERE empleados.id_depto IS NOT NULL;
+
+SELECT departamentos.nombre as Departamento, COUNT(empleados.id_empleado) as "N° de empleados" FROM `departamentos` LEFT JOIN empleados ON empleados.id_depto=departamentos.id_depto GROUP BY departamentos.nombre;

@@ -1,0 +1,15 @@
+Actividad II
+
+Mostrar todos los prestamos entre el primero al 15 de octubre con el precio entre 300 y 400
+
+SELECT prestamos.idPrestamo as idprestamo, prestamos.fechaPrestamo as fechaPrestamo, prestamos.alumno as Alumno, libros.titulo as Titulo, libros.precio as Precio FROM `prestamos` JOIN libros ON libros.idLibro = prestamos.idLibro WHERE (fechaPrestamo BETWEEN "2024-10-1" AND "2024-10-15") ORDER BY fechaPrestamo ASC;
+
+
+Mostrar todos los autores cuyos libros tienen un precio promedio de 350 y 450
+
+SELECT autores.nombreAutor AS nombreAutor, AVG(libros.precio) as Promedio FROM `autores` JOIN libros ON libros.idAutor = autores.idAutor GROUP BY autores.nombreAutor HAVING AVG(libros.precio) BETWEEN 350 AND 450;
+
+
+Libros de autores que NO sean de argentina ni de méxico
+
+SELECT nombreAutor, pais FROM `autores` WHERE pais NOT IN ("Mexico", "Argentina");
